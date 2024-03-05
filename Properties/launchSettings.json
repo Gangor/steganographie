@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Steganographie": {
+      "commandName": "Project",
+      "commandLineArgs": "lecture --clef \"DWBJSk17kDF+pyXr5v9nm3qkk8FLMutrQ8qGqt7Qd2o=\" --image \"D:\\image_test.jpg\""
+    }
+  }
+}
