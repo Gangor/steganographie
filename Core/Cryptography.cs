@@ -1,8 +1,11 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Steganographie
+namespace Steganographie.Core
 {
+    // resource:
+    // https://www.codeproject.com/Tips/635715/Steganography-Simple-Implementation-in-Csharp
+
     public class Crypto
     {
         private static byte[] _salt = Encoding.ASCII.GetBytes("8iMUZSQ94CAClrY8lNTyfwzc82Rq");
