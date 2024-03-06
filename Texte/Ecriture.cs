@@ -58,8 +58,16 @@ namespace Steganographie
                             throw new Exception("Echec du chiffrement du message!");
                         }
 
+                        var textSize = encodedMessage.Length * 8;
+                        var textSizeInKB = textSize / 1024;
+
+                        // On vérifie que le contenue à caché peut rentrer dans l'image
+                        if (textSizeInKB > SteganographyHelper.GetImageSizeInKB(bitmap))
+                        {
+                            throw new Exception($"L'image ne peut contenir un texte de taille plus importante que {SteganographyHelper.GetImageSizeInKB(bitmap)} KB");
+                        }
+
                         // On intégre le texte dans l'image
-                        // La méthode gére le cas de dépassement de capicité de stockage de l'image
                         SteganographyHelper.embedText(encodedMessage, bitmap);
 
                         // On sauvegarde l'image

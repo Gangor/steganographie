@@ -222,5 +222,10 @@ namespace Steganographie.Core
 
             return result;
         }
+
+        public static double GetImageSizeInKB(Bitmap image)
+        {
+            return (image.Width * image.Height * 16) / 1024.0; // Assuming each pixel stores 16 bits
+        }
     }
 }
