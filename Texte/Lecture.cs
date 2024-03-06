@@ -45,7 +45,7 @@ namespace Steganographie
                         {
                             decodedMessage = Crypto.DecryptStringAES(encodedMessage, Clef);
 
-                            Console.WriteLine($"Message secret : {decodedMessage}");
+                            console.WriteLine($"Message secret : {decodedMessage}");
                         }
                         catch (Exception)
                         {
@@ -55,7 +55,7 @@ namespace Steganographie
                     }
                     catch (Exception ex)
                     {
-                        Console.Error.WriteLine($"Erreur : {ex.Message}");
+                        console.Error.WriteLine($"Erreur : {ex.Message}");
                     }
                 }
             }

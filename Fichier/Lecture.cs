@@ -58,10 +58,12 @@ namespace Steganographie
 
                         // On sauvegarde le fichier
                         File.WriteAllBytes(Output, secret);
+
+                        console.WriteLine($"Fichier sauvegardé à l'emplacement : {Output}");
                     }
                     catch (Exception ex)
                     {
-                        Console.Error.WriteLine($"Erreur : {ex.Message}");
+                        console.Error.WriteLine($"Erreur : {ex.Message}");
                     }
                 }
             }

@@ -65,11 +65,11 @@ namespace Steganographie
                         // On sauvegarde l'image
                         bitmap.Save(Output, ImageFormat.Png);
 
-                        Console.WriteLine($"Image sauvegardé à l'emplacement : {Output}");
+                        console.WriteLine($"Image sauvegardé à l'emplacement : {Output}");
                     }
                     catch (Exception ex)
                     {
-                        Console.Error.WriteLine($"Erreur : {ex.Message}");
+                        console.Error.WriteLine($"Erreur : {ex.Message}");
                     }
                 }
             }
