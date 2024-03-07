@@ -10,7 +10,7 @@ namespace Steganographie
     /// <summary>
     /// Point d'entrée de l'application
     /// </summary>
-    [Command]
+    [Command(ShowInHelpText = false)]
     [Subcommand(typeof(Texte), typeof(Fichier))]
     partial class Program :SubCommand
     {
@@ -19,14 +19,14 @@ namespace Steganographie
         /// <summary>
         /// Commandes de gestion d'intégration de fichier dans une image
         /// </summary>
-        [Command("fichier", Description = "Intégrer un fichier dans une image")]
+        [Command("fichier", ShowInHelpText = false, Description = "Intégrer un fichier dans une image")]
         [Subcommand(typeof(Lecture), typeof(Ecriture))]
         private partial class Fichier : SubCommand
         {
             /// <summary>
             /// Sous-commande de lecture de fichier dans une image.
             /// </summary>
-            [Command("lecture", Description = "Lecture d'un fichier dans une image",
+            [Command("lecture", ShowInHelpText = false, Description = "Lecture d'un fichier dans une image",
                     AllowArgumentSeparator = true,
                     UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect)]
             partial class Lecture { }
@@ -34,7 +34,7 @@ namespace Steganographie
             /// <summary>
             /// Sous-commande d'écriture de fichier dans une image.
             /// </summary>
-            [Command("ecriture", Description = "Ecriture d'un fichier dans une image",
+            [Command("ecriture", ShowInHelpText = false, Description = "Ecriture d'un fichier dans une image",
                     AllowArgumentSeparator = true,
                     UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect)]
             partial class Ecriture { }
@@ -43,7 +43,7 @@ namespace Steganographie
         /// <summary>
         /// Commandes de gestion d'intégration de texte dans une image
         /// </summary>
-        [Command("texte", Description = "Intégrer un texte dans une image")]
+        [Command("texte", ShowInHelpText = false, Description = "Intégrer un texte dans une image")]
         [Subcommand(typeof(Lecture), typeof(Ecriture))]
         private partial class Texte : SubCommand
         {
@@ -52,6 +52,7 @@ namespace Steganographie
             /// </summary>
             [Command("lecture", Description = "Lecture d'un message sur une image",
                     AllowArgumentSeparator = true,
+                    ShowInHelpText = false,
                     UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect)]
             partial class Lecture { }
 
@@ -60,6 +61,7 @@ namespace Steganographie
             /// </summary>
             [Command("ecriture", Description = "Ecriture d'un message sur une image",
                     AllowArgumentSeparator = true,
+                    ShowInHelpText = false,
                     UnrecognizedArgumentHandling = UnrecognizedArgumentHandling.StopParsingAndCollect)]
             partial class Ecriture { }
         }
@@ -72,7 +74,6 @@ namespace Steganographie
     {
         public int OnExecute(CommandLineApplication app, IConsole console)
         {
-            app.ShowHelp();
             return 1;
         }
     }

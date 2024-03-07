@@ -15,20 +15,20 @@ namespace Steganographie
             partial class Ecriture
             {
                 [Required]
-                [Option("--clef", Description = "Clef servant à chiffrer le contenue caché")]
+                [Option("--clef", Description = "Clef servant à chiffrer le contenue caché", ShowInHelpText = false)]
                 public string Clef { get; set; }
 
                 [Required]
                 [FileExists]
-                [Option("--image", Description = "Emplacement vers l'image de base qui servira à cacher du contenue")]
+                [Option("--image", Description = "Emplacement vers l'image de base qui servira à cacher du contenue", ShowInHelpText = false)]
                 public string Image { get; set; }
 
                 [Required]
-                [Option("--output", Description = "Emplacement de l'image de sortie")]
+                [Option("--output", Description = "Emplacement de l'image de sortie", ShowInHelpText = false)]
                 public string Output { get; set; }
 
                 [Required]
-                [Option("--message", Description = "Message à cacher dans l'image")]
+                [Option("--message", Description = "Message à cacher dans l'image", ShowInHelpText = false)]
                 public string Message { get; set; }
 
                 /// <summary>

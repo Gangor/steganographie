@@ -13,21 +13,21 @@ namespace Steganographie
             partial class Ecriture
             {
                 [Required]
-                [Option("--clef", Description = "Clef servant à chiffrer le contenue caché")]
+                [Option("--clef", Description = "Clef servant à chiffrer le contenue caché", ShowInHelpText = false)]
                 public string Clef { get; set; }
 
                 [Required]
                 [FileExists]
-                [Option("--image", Description = "Emplacement d'une image existante de base qui servira à cacher du contenue")]
+                [Option("--image", Description = "Emplacement d'une image existante de base qui servira à cacher du contenue", ShowInHelpText = false)]
                 public string Image { get; set; }
 
                 [Required]
                 [FileExists]
-                [Option("--secret-file", Description = "Emplacement vers le fichier à cacher dans l'image")]
+                [Option("--secret-file", Description = "Emplacement vers le fichier à cacher dans l'image", ShowInHelpText = false)]
                 public string SecretFile { get; set; }
 
                 [Required]
-                [Option("--output", Description = "Emplacement de l'image de sortie")]
+                [Option("--output", Description = "Emplacement de l'image de sortie", ShowInHelpText = false)]
                 public string Output { get; set; }
 
                 /// <summary>

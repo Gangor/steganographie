@@ -12,12 +12,12 @@ namespace Steganographie
             partial class Lecture
             {
                 [Required]
-                [Option("--clef", Description = "Clef servant à chiffrer le contenue caché")]
+                [Option("--clef", Description = "Clef servant à chiffrer le contenue caché", ShowInHelpText = false)]
                 public string Clef { get; set; }
 
                 [Required]
                 [FileExists]
-                [Option("--image", Description = "Emplacement vers l'image de base qui servira à cacher du contenue")]
+                [Option("--image", Description = "Emplacement vers l'image de base qui servira à cacher du contenue", ShowInHelpText = false)]
                 public string Image { get; set; }
 
                 /// <summary>
